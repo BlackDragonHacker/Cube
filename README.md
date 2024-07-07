@@ -5,9 +5,9 @@ Auto Claim for tomarket Telegram Bot
 
 # Features
 
-- [x] Auto Claim
+- [x] Auto Mine
+- [x] Auto Boost Pool
 - [x] Multi Account Support
-- [x] Auto Play Game
 
 # Register
 
