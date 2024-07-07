@@ -37,16 +37,31 @@ class CubeTod:
         self.interval = 5 * 60  # Reduced interval to 5 minutes
         self.sleep = 5  # Reduced sleep time between mining attempts to 5 seconds
 
-
-
-
     def main(self):
-        banner = f"""
-    
-    {hijau}AUTO MINE {hijau}CUBE {putih}/ 
-    
-        """
-        
+        banner = "\033[1;91m" + r"""  
+  ___    _                  _     
+ (  _`\ (_ )               ( )    
+ | (_) ) | |    _ _    ___ | |/') 
+ |  _ <' | |  /'_` ) /'___)| , <  
+ | (_) ) | | ( (_| |( (___ | |\`\ 
+ (____/'(___)`\__,_)`\____)(_) (_)
+""" + "\033[0m" + "\033[1;92m" + r"""  
+  ___                                     
+ (  _`\                                   
+ | | ) | _ __    _ _    __     _     ___  
+ | | | )( '__) /'_` ) /'_ `\ /'_`\ /' _ `\
+ | |_) || |   ( (_| |( (_) |( (_) )| ( ) |
+ (____/'(_)   `\__,_)`\____)(_) (_) (_) (_)
+                     ( )_) |              
+                      \___/'              
+""" + "\033[0m" + "\033[1;93m" + r"""  
+  _   _                _                  
+ ( ) ( )              ( )                 
+ | |_| |   _ _    ___ | |/')    __   _ __ 
+ |  _  | /'_` ) /'___)| , <   /'__`\( '__)
+ | | | |( (_| |( (___ | |\`\ (  ___/| |   
+ (_) (_)`\__,_)`\____)(_) (_)`\____)(_)   
+""" + "\033[0m"
         
         if len(sys.argv) <= 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -72,12 +87,13 @@ class CubeTod:
         self.headers['user-agent'] = ua[0]
 
         total_accounts = len(data)
-        self.log(f"{putih}Total accounts: {total_accounts}")
+        self.log(f"{Style.BRIGHT}{Fore.YELLOW}Total accounts: {total_accounts}{reset}")
+
 
         self.boost_pool = input("Can you boost Pool? (y/n): ").lower() == 'y'
         if self.boost_pool:
             self.boost_amount = int(input("Boost amount: "))
-            self.boost_interval_hours = int(input("Boost interval in hours: "))
+            #self.boost_interval_hours = int(input("Boost interval in hours: "))
 
         while True:
             print('~' * 50)
@@ -95,12 +111,7 @@ class CubeTod:
             self.countdown(self.interval)
 
     def log(self, message):
-        year, mon, day, hour, minute, second, a, b, c = time.localtime()
-        mon = str(mon).zfill(2)
-        hour = str(hour).zfill(2)
-        minute = str(minute).zfill(2)
-        second = str(second).zfill(2)
-        print(f"{biru}[{year}-{mon}-{day} {hour}:{minute}:{second}] {message}")
+        print(f"{biru}{message}")
 
     def countdown(self, t):
         while t:
@@ -191,12 +202,11 @@ class CubeTod:
             else:
                 self.log(f"{bold}{merah}Unexpected error while boosting pool, status code: {kuning}{res.status_code}{reset}")
                 return False
-        
-        self.log(f"{bold}{merah}Failed to boost pool after {retry_attempts} attempts{reset}")
+
         return False
 
     def claim_pool_balance(self, token):
-        url = "https://server.questioncube.xyz/pools/claim"
+        url = "https://server.questioncube.xyz/pools/claim-balance"
         payload = {
             "token": token
         }
@@ -204,15 +214,15 @@ class CubeTod:
         headers['content-length'] = str(len(json.dumps(payload)))
         res = self.http(url, headers, json.dumps(payload))
         if res.status_code == 200:
-            balance = res.json().get('balance', 0)
-            if balance > 1:
-                self.log(f"{bold}{hijau}Pool balance claimed successfully, balance: {putih}{balance}{reset}")
-            else:
-                self.log(f"{bold}{kuning}Pool balance is less than 1, not claimed{reset}")
-                self.log(f'{Style.BRIGHT}{Fore.LIGHTYELLOW_EX}-----------------------------{reset}')
+            self.log(f"{bold}{hijau}Claimed pool balance successfully{reset}")
+            return True
+        elif res.status_code == 400 and 'insufficient balance' in res.text:
+            self.log(f"{bold}{merah}Insufficient pool balance to claim{reset}")
         else:
             self.log(f"{bold}{merah}Failed to claim pool balance, status code: {kuning}{res.status_code}{reset}")
-                
+        
+        return False
+
     def http(self, url, headers, data=None):
         while True:
             try:
