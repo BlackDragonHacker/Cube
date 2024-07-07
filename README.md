@@ -121,9 +121,9 @@ Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bo
 
 # How to Get Data
 
-How to enable dev tool on teelgram PC : [https://youtu.be/NYxHmck_GjE](https://youtu.be/NYxHmck_GjE)
+How to enable dev tool on teelgram PC : [)
 
-Watch the following video to get data [https://youtu.be/fdbdt-fEoVg](https://youtu.be/fdbdt-fEoVg)
+Watch the following video to get data [)
 
 # Run for 24/7 
 
