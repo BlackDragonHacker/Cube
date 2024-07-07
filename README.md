@@ -14,7 +14,9 @@ Auto Claim for tomarket Telegram Bot
 Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bot/Cubes?startapp=112472-from-614976&startApp=112472-from-614976)
 
 # How to Use
-
+- [Windows](#windows)
+- [Linux](#linux)
+- [Termux](#termux)
 ## Windows 
 
 1. Make sure you computer was installed python and git.
