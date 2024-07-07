@@ -38,7 +38,7 @@ Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bo
    python -m pip install -r pip.txt
    ```
 
-5. Edit `data`, input you data token in `data`, find you token in [How to Get Data](#how-to-get-data). One line for one data account, if you want add you second account add in new line!
+5. Edit `data`, input you data token in `data`
 
 6. execute the main program 
    ```
@@ -76,7 +76,7 @@ Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bo
    python3 -m pip install -r pip.txt
    ```
 
-5. Edit `data`, input you data token in `data`, find you token in [How to Get Data](#how-to-get-data). One line for one data account, if you want add you second account add in new line!
+5. Edit `data`, input you data token in `data`
 
 6. execute the main program 
    ```
@@ -112,7 +112,7 @@ Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bo
    python -m pip install -r pip.txt
    ```
 
-5. Edit `data`, input you data token in `data`, find you token in [How to Get Data](#how-to-get-data). One line for one data account, if you want add you second account add in new line!
+5. Edit `data`, input you data token in `data`
 
 6. execute the main program 
    ```
