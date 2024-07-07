@@ -118,10 +118,4 @@ Click the following url to register : [Cube Bot](https://t.me/cubesonthewater_bo
    ```
    python bot.py
    ```
-
-# Run for 24/7 
-
-You can run the script bot for 24/7 using vps / rdp. You can use `screen` application in vps linux to running the script bot in background process
-
-
 # Thank you
