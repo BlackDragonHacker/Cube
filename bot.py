@@ -62,11 +62,25 @@ class CubeTod:
  | | | |( (_| |( (___ | |\`\ (  ___/| |   
  (_) (_)`\__,_)`\____)(_) (_)`\____)(_)   
 """ + "\033[0m"
+        banner2 = "\033[1;96m----------------------------------\033[0m"
+        banner3 = "\033[1;93mScript created by: Black Dragon Hacker\033[0m"
+        banner4 = "\033[1;92mJoin Telegram: \nhttps://t.me/BlackDragonHacker007\033[0m"
+        banner5 = "\033[1;91mVisit my GitHub: \nhttps://github.com/BlackDragonHacker\033[0m"
+        banner6 = "\033[1;96m----------------------------------\033[0m"
+        banner7 = "\033[1;38;2;139;69;19;48;2;173;216;230m--------[Cube Bot]--------\033[0m"
+        banner8 = "\033[1;96m----------------------------------\033[0m"
         
         if len(sys.argv) <= 1:
             os.system('cls' if os.name == 'nt' else 'clear')
         print(banner)
-        print('~' * 50)
+        print(banner2)
+        print(banner3)
+        print(banner4)
+        print(banner5)
+        print(banner6)
+        print(banner7)
+        print(banner8)
+        
         if not os.path.exists('data'):
             open('data', 'a')
         
@@ -96,7 +110,7 @@ class CubeTod:
             #self.boost_interval_hours = int(input("Boost interval in hours: "))
 
         while True:
-            print('~' * 50)
+            #print('~' * 50)
             for index, token_data in enumerate(data):
                 token = self.login(token_data)
                 while True:
