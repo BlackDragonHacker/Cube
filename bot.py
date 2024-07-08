@@ -220,7 +220,7 @@ class CubeTod:
         return False
 
     def claim_pool_balance(self, token):
-        url = "https://server.questioncube.xyz/pools/claim-balance"
+        url = "https://server.questioncube.xyz/pools/claim"
         payload = {
             "token": token
         }
