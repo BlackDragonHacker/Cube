@@ -1,6 +1,6 @@
 # Cube Bot
 
-Auto Claim for tomarket Telegram Bot
+Auto Claim for Cube Telegram Bot
 
 
 # Features
